@@ -124,6 +124,10 @@ app.post('/delete_process', function(request, response){
   });
 });
 
+app.use(function(req, res, next) {
+  res.status(404).send('Sorry cant find that!');
+});
+
 app.listen(3000, function() {
   console.log(`Example app listening on port 3000`);
 })
